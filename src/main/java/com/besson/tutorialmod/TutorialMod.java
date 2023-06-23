@@ -1,5 +1,6 @@
 package com.besson.tutorialmod;
 
+import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -22,8 +23,7 @@ import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
-public class TutorialMod
-{
+public class TutorialMod {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "tutorialmod";
@@ -32,6 +32,7 @@ public class TutorialMod
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

@@ -1,6 +1,7 @@
 package com.besson.tutorialmod.block;
 
 import com.besson.tutorialmod.TutorialMod;
+import com.besson.tutorialmod.block.custom.FireEtherBlock;
 import com.besson.tutorialmod.item.ModItemGroup;
 import com.besson.tutorialmod.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -21,6 +22,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ICE_ETHER_BLOCK = registerBlock("iceetherblock",
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> FIRE_ETHER_BLOCK = registerBlock("fireetherblock",
+            () -> new FireEtherBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

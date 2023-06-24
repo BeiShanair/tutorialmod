@@ -5,6 +5,7 @@ import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CampfireBlock;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -22,6 +23,7 @@ import net.minecraft.world.World;
 import java.util.Objects;
 
 public class FireEther extends Item {
+
     public FireEther(Properties properties) {
         super(properties);
     }
@@ -38,7 +40,7 @@ public class FireEther extends Item {
         return super.onItemUseFirst(stack, context);
     }
 
-    private void lightFire(BlockState blockState, ItemUseContext context, PlayerEntity playerEntity) {
+    private static void lightFire(BlockState blockState, ItemUseContext context, PlayerEntity playerEntity) {
         boolean playerEntityNotOnFire = !playerEntity.isBurning();
         if (random.nextFloat() > 0.5f){
             lightEntityOnFire(playerEntity,10);
@@ -49,7 +51,7 @@ public class FireEther extends Item {
         }
     }
 
-    private void lightGround(ItemUseContext context) {
+    private static void lightGround(ItemUseContext context) {
         PlayerEntity playerentity = context.getPlayer();
         World world = context.getWorld();
         BlockPos blockpos = context.getPos();
@@ -64,16 +66,16 @@ public class FireEther extends Item {
         }
     }
 
-    private void gainFRAndDB(PlayerEntity playerEntity, World world, BlockPos pos) {
+    private static void gainFRAndDB(PlayerEntity playerEntity, World world, BlockPos pos) {
         playerEntity.addPotionEffect(new EffectInstance(Effects.FIRE_RESISTANCE,200));
         world.destroyBlock(pos,false);
     }
 
-    private boolean blockIsRight(BlockState blockState) {
+    private static boolean blockIsRight(BlockState blockState) {
         return blockState.getBlock() == Blocks.REDSTONE_BLOCK;
     }
 
-    private void lightEntityOnFire(PlayerEntity playerEntity,int second) {
-        playerEntity.setFire(second);
+    public static void lightEntityOnFire(Entity entity, int second) {
+        entity.setFire(second);
     }
 }

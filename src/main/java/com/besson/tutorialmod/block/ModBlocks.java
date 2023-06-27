@@ -40,6 +40,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> ICE_ETHER_SLAB = registerBlock("iceether_slab",
             () -> new SlabBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_ETHER_BUTTON = registerBlock("iceether_button",
+            () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f).doesNotBlockMovement()));
+    public static final RegistryObject<Block> ICE_ETHER_PRESSURE_PLATE = registerBlock("iceether_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

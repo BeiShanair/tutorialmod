@@ -4,8 +4,7 @@ import com.besson.tutorialmod.TutorialMod;
 import com.besson.tutorialmod.block.custom.FireEtherBlock;
 import com.besson.tutorialmod.item.ModItemGroup;
 import com.besson.tutorialmod.item.ModItems;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -25,6 +24,17 @@ public class ModBlocks {
                     .hardnessAndResistance(5f)));
     public static final RegistryObject<Block> FIRE_ETHER_BLOCK = registerBlock("fireetherblock",
             () -> new FireEtherBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+
+    public static final RegistryObject<Block> ICE_ETHER_STAIRS = registerBlock("iceether_stairs",
+            () -> new StairsBlock(() -> ICE_ETHER_BLOCK.get().getDefaultState(),AbstractBlock.Properties.create(Material.ROCK)
+                    .harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool().hardnessAndResistance(5f)));
+
+    public static final RegistryObject<Block> ICE_ETHER_FENCE = registerBlock("iceether_fence",
+            () -> new FenceBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_ETHER_FENCE_GATE = registerBlock("iceether_fence_gate",
+            () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

@@ -3,5 +3,10 @@
   "item.tutorialmod.fireether": "FIRE ETHER",
   "itemGroup.tutorialtab": "Tutorial Tab",
   "block.tutorialmod.iceetherblock": "ICE ETHER BLOCK",
-  "block.tutorialmod.fireetherblock": "FIRE ETHER BLOCK"
+  "block.tutorialmod.fireetherblock": "FIRE ETHER BLOCK",
+  "block.tutorialmod.iceether_stairs": "ICE ETHER STAIRS",
+  "block.tutorialmod.iceether_fence": "ICE ETHER FENCE",
+  "block.tutorialmod.iceether_fence_gate": "ICE ETHER FENCE GATE",
+  "tooltip.tutorialmod.iceether": "Hold \u00A76SHIFT\u00A7r for more information",
+  "tooltip.tutorialmod.iceether_shift": "It may make you slow down"
 }

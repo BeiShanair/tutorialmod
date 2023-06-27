@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "tutorialmod:iceether_fence",
+    "minecraft:nether_brick_fence"
+  ]
+}

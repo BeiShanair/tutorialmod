@@ -1,19 +1,15 @@
 package com.besson.tutorialmod.item.custom;
 
-import net.minecraft.advancements.CriteriaTriggers;
+import com.besson.tutorialmod.util.TutorialTags;
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CampfireBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -72,7 +68,7 @@ public class FireEther extends Item {
     }
 
     private static boolean blockIsRight(BlockState blockState) {
-        return blockState.getBlock() == Blocks.REDSTONE_BLOCK;
+        return blockState.isIn(TutorialTags.Blocks.RIGHT_BLOCK);
     }
 
     public static void lightEntityOnFire(Entity entity, int second) {

@@ -1,6 +1,11 @@
 {
   "item.tutorialmod.iceether": "ICE ETHER",
   "item.tutorialmod.fireether": "FIRE ETHER",
+  "item.tutorialmod.fireether_sword": "FIRE ETHER SWORD",
+  "item.tutorialmod.fireether_shovel": "FIRE ETHER SHOVEL",
+  "item.tutorialmod.fireether_pickaxe": "FIRE ETHER PICKAXE",
+  "item.tutorialmod.fireether_axe": "FIRE ETHER AXE",
+  "item.tutorialmod.fireether_hoe": "FIRE ETHER HOE",
   "itemGroup.tutorialtab": "Tutorial Tab",
   "block.tutorialmod.iceetherblock": "ICE ETHER BLOCK",
   "block.tutorialmod.fireetherblock": "FIRE ETHER BLOCK",

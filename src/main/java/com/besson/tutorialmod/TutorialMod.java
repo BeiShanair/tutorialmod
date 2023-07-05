@@ -4,6 +4,8 @@ import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -53,7 +55,11 @@ public class TutorialMod {
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {;
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        event.enqueueWork(()->{
+            RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_DOOR.get(),RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_TRAPDOOR.get(),RenderType.getCutout());
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

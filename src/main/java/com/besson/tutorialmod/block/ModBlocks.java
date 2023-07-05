@@ -46,6 +46,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> ICE_ETHER_PRESSURE_PLATE = registerBlock("iceether_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_ETHER_DOOR = registerBlock("iceether_door",
+            () -> new DoorBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(2).harvestTool(ToolType.AXE).setRequiresTool()
+                    .hardnessAndResistance(5f).notSolid()));
+    public static final RegistryObject<Block> ICE_ETHER_TRAPDOOR = registerBlock("iceether_trapdoor",
+            () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(2).harvestTool(ToolType.AXE).setRequiresTool()
+                    .hardnessAndResistance(5f).notSolid()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

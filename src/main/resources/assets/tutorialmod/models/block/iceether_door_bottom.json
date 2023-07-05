@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "top": "tutorialmod:block/iceether_door_top",
+    "bottom": "tutorialmod:block/iceether_door_bottom"
+  }
+}

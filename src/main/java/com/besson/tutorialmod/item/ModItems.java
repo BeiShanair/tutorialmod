@@ -3,6 +3,7 @@ package com.besson.tutorialmod.item;
 import com.besson.tutorialmod.TutorialMod;
 import com.besson.tutorialmod.item.custom.FireEther;
 import com.besson.tutorialmod.item.custom.IceEther;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -27,6 +28,14 @@ public class ModItems {
             () -> new HoeItem(ModItemTier.FIRE_ETHER,-2,0f,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
     public static final RegistryObject<Item> FIRE_ETHER_SHOVEL = ITEMS.register("fireether_shovel",
             () -> new ShovelItem(ModItemTier.FIRE_ETHER,1.5f,-3f,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_ETHER_HELMET = ITEMS.register("iceether_helmet",
+            () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.HEAD,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_ETHER_CHESTPLATE = ITEMS.register("iceether_chestplate",
+            () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.CHEST,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_ETHER_LEGGINGS = ITEMS.register("iceether_leggings",
+            () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.LEGS,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_ETHER_BOOTS = ITEMS.register("iceether_boots",
+            () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.FEET,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

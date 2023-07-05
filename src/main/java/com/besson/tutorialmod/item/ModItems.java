@@ -36,6 +36,8 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.LEGS,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
     public static final RegistryObject<Item> ICE_ETHER_BOOTS = ITEMS.register("iceether_boots",
             () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.FEET,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_ETHER_HORSE_ARMOR = ITEMS.register("iceether_horse_armor",
+            () -> new HorseArmorItem(9,"iceether",new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

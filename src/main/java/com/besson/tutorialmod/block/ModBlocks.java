@@ -1,6 +1,7 @@
 package com.besson.tutorialmod.block;
 
 import com.besson.tutorialmod.TutorialMod;
+import com.besson.tutorialmod.block.custom.CornsBlock;
 import com.besson.tutorialmod.block.custom.FireEtherBlock;
 import com.besson.tutorialmod.item.ModItemGroup;
 import com.besson.tutorialmod.item.ModItems;
@@ -52,6 +53,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> ICE_ETHER_TRAPDOOR = registerBlock("iceether_trapdoor",
             () -> new TrapDoorBlock(AbstractBlock.Properties.create(Material.WOOD).harvestLevel(2).harvestTool(ToolType.AXE).setRequiresTool()
                     .hardnessAndResistance(5f).notSolid()));
+    public static final RegistryObject<Block> CORNS = BLOCKS.register("corns",
+            () -> new CornsBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

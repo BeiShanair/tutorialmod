@@ -59,6 +59,7 @@ public class TutorialMod {
         event.enqueueWork(()->{
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_DOOR.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_TRAPDOOR.get(),RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.CORNS.get(),RenderType.getCutout());
         });
     }
 

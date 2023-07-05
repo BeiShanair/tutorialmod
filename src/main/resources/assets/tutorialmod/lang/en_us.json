@@ -22,6 +22,7 @@
   "block.tutorialmod.iceether_fence_gate": "ICE ETHER FENCE GATE",
   "block.tutorialmod.iceether_door": "ICE ETHER door",
   "block.tutorialmod.iceether_trapdoor": "ICE ETHER trapdoor",
+  "block.tutorialmod.corns": "corns",
   "tooltip.tutorialmod.iceether": "Hold \u00A76SHIFT\u00A7r for more information",
   "tooltip.tutorialmod.iceether_shift": "It may make you slow down"
 }

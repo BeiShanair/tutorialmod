@@ -1,6 +1,7 @@
 package com.besson.tutorialmod.item;
 
 import com.besson.tutorialmod.TutorialMod;
+import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.item.custom.FireEther;
 import com.besson.tutorialmod.item.custom.IceEther;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -38,6 +39,9 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterial.ICEETHER, EquipmentSlotType.FEET,new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
     public static final RegistryObject<Item> ICE_ETHER_HORSE_ARMOR = ITEMS.register("iceether_horse_armor",
             () -> new HorseArmorItem(9,"iceether",new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> CORNS = ITEMS.register("corns",
+            () -> new BlockItem(ModBlocks.CORNS.get(),new Item.Properties().food(new Food.Builder().hunger(3)
+                    .saturation(0.1f).fastToEat().build()).group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

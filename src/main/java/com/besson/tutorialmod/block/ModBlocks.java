@@ -79,6 +79,9 @@ public class ModBlocks {
             () -> new SaplingBlock(new IceetherTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING).notSolid()));
     public static final RegistryObject<Block> LEUCANTHEMUM_PALUDOSUM = registerBlock("leucanthemum_paludosum",
             () -> new FlowerBlock(Effects.HASTE,2, AbstractBlock.Properties.from(Blocks.DANDELION).notSolid()));
+    public static final RegistryObject<Block> ICE_ETHER_ORE = registerBlock("iceether_ore",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

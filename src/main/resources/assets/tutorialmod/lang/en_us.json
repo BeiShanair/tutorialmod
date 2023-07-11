@@ -23,6 +23,11 @@
   "block.tutorialmod.iceether_door": "ICE ETHER door",
   "block.tutorialmod.iceether_trapdoor": "ICE ETHER trapdoor",
   "block.tutorialmod.corns": "corns",
+  "block.tutorialmod.ice_wood": "ice wood",
+  "block.tutorialmod.ice_log": "ice log",
+  "block.tutorialmod.ice_planks": "ice planks",
+  "block.tutorialmod.stripped_ice_log": "stripped ice log",
+  "block.tutorialmod.stripped_ice_wood": "stripped ice wood",
   "tooltip.tutorialmod.iceether": "Hold \u00A76SHIFT\u00A7r for more information",
   "tooltip.tutorialmod.iceether_shift": "It may make you slow down"
 }

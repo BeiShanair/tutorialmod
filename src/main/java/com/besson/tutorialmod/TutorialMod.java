@@ -2,10 +2,12 @@ package com.besson.tutorialmod;
 
 import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.item.ModItems;
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.item.AxeItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -53,6 +55,11 @@ public class TutorialMod {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(()->{
+            AxeItem.BLOCK_STRIPPING_MAP = new ImmutableMap.Builder<Block,Block>().putAll(AxeItem.BLOCK_STRIPPING_MAP)
+                    .put(ModBlocks.ICE_LOG.get(),ModBlocks.STRIPPED_ICE_LOG.get())
+                    .put(ModBlocks.ICE_WOOD.get(),ModBlocks.STRIPPED_ICE_WOOD.get()).build();
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

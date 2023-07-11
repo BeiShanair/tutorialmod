@@ -55,6 +55,22 @@ public class ModBlocks {
                     .hardnessAndResistance(5f).notSolid()));
     public static final RegistryObject<Block> CORNS = BLOCKS.register("corns",
             () -> new CornsBlock(AbstractBlock.Properties.from(Blocks.WHEAT)));
+    public static final RegistryObject<Block> ICE_WOOD= registerBlock("ice_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.OAK_WOOD).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_PLANKS = registerBlock("ice_planks",
+            () -> new Block(AbstractBlock.Properties.from(Blocks.OAK_PLANKS).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_LOG = registerBlock("ice_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.OAK_LOG).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> STRIPPED_ICE_WOOD = registerBlock("stripped_ice_wood",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_WOOD).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> STRIPPED_ICE_LOG = registerBlock("stripped_ice_log",
+            () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
+                    .hardnessAndResistance(5f)));
+
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

@@ -28,6 +28,8 @@
   "block.tutorialmod.ice_planks": "ice planks",
   "block.tutorialmod.stripped_ice_log": "stripped ice log",
   "block.tutorialmod.stripped_ice_wood": "stripped ice wood",
+  "block.tutorialmod.iceether_leaves": "Ice Ether Leaves",
+  "block.tutorialmod.iceether_sapling": "Ice Ether Tree",
   "tooltip.tutorialmod.iceether": "Hold \u00A76SHIFT\u00A7r for more information",
   "tooltip.tutorialmod.iceether_shift": "It may make you slow down"
 }

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "tutorialmod:block/iceetherblock",
-    "top": "tutorialmod:block/iceetherblock",
-    "side": "tutorialmod:block/iceetherblock"
-  }
-}

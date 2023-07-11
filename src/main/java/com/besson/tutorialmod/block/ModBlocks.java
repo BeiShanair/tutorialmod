@@ -3,6 +3,7 @@ package com.besson.tutorialmod.block;
 import com.besson.tutorialmod.TutorialMod;
 import com.besson.tutorialmod.block.custom.CornsBlock;
 import com.besson.tutorialmod.block.custom.FireEtherBlock;
+import com.besson.tutorialmod.block.custom.trees.IceetherTree;
 import com.besson.tutorialmod.item.ModItemGroup;
 import com.besson.tutorialmod.item.ModItems;
 import net.minecraft.block.*;
@@ -70,6 +71,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_ICE_LOG = registerBlock("stripped_ice_log",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.from(Blocks.STRIPPED_OAK_LOG).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_ETHER_LEAVES = registerBlock("iceether_leaves",
+            () -> new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2f)
+                    .tickRandomly().sound(SoundType.PLANT).notSolid()));
+    public static final RegistryObject<Block> ICE_ETHER_SAPLING = registerBlock("iceether_sapling",
+            () -> new SaplingBlock(new IceetherTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING).notSolid()));
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

@@ -69,6 +69,7 @@ public class TutorialMod {
             RenderTypeLookup.setRenderLayer(ModBlocks.CORNS.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_LEAVES.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_SAPLING.get(),RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.LEUCANTHEMUM_PALUDOSUM.get(),RenderType.getCutout());
         });
     }
 

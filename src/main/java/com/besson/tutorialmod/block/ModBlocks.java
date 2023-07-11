@@ -10,6 +10,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -76,6 +77,8 @@ public class ModBlocks {
                     .tickRandomly().sound(SoundType.PLANT).notSolid()));
     public static final RegistryObject<Block> ICE_ETHER_SAPLING = registerBlock("iceether_sapling",
             () -> new SaplingBlock(new IceetherTree(),AbstractBlock.Properties.from(Blocks.OAK_SAPLING).notSolid()));
+    public static final RegistryObject<Block> LEUCANTHEMUM_PALUDOSUM = registerBlock("leucanthemum_paludosum",
+            () -> new FlowerBlock(Effects.HASTE,2, AbstractBlock.Properties.from(Blocks.DANDELION).notSolid()));
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){

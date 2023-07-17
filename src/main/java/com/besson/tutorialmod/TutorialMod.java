@@ -2,6 +2,7 @@ package com.besson.tutorialmod;
 
 import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.item.ModItems;
+import com.besson.tutorialmod.tileentity.ModTileEntities;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -37,6 +38,7 @@ public class TutorialMod {
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTileEntities.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

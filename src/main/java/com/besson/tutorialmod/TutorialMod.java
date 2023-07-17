@@ -1,11 +1,14 @@
 package com.besson.tutorialmod;
 
 import com.besson.tutorialmod.block.ModBlocks;
+import com.besson.tutorialmod.containers.ModContainers;
 import com.besson.tutorialmod.item.ModItems;
+import com.besson.tutorialmod.screens.RainingChangerScreen;
 import com.besson.tutorialmod.tileentity.ModTileEntities;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.AxeItem;
@@ -39,6 +42,7 @@ public class TutorialMod {
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
+        ModContainers.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -72,6 +76,8 @@ public class TutorialMod {
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_LEAVES.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_SAPLING.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.LEUCANTHEMUM_PALUDOSUM.get(),RenderType.getCutout());
+
+            ScreenManager.registerFactory(ModContainers.RAINING_CHANGER_CONTAINER.get(), RainingChangerScreen::new);
         });
     }
 

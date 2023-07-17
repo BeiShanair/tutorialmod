@@ -14,6 +14,8 @@ public class ModTileEntities {
 
     public static final RegistryObject<TileEntityType<BoxTileEntity>> BOX_TILE_ENTITY = TILE_ENTITY.register(
             "box_tile_entity",() ->TileEntityType.Builder.create(BoxTileEntity::new,ModBlocks.BOX.get()).build(null));
+    public static final RegistryObject<TileEntityType<RainingChangerTileEntity>> RAINING_CHANGER_TILE_ENTITY = TILE_ENTITY.register("raining_changer_tile_entity",
+            () -> TileEntityType.Builder.create(RainingChangerTileEntity::new,ModBlocks.RAINING_CHANGER.get()).build(null));
 
     public static void register(IEventBus eventBus){
         TILE_ENTITY.register(eventBus);

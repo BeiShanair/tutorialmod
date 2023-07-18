@@ -1,6 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "tutorialmod:block/fireetherblock"
+    "all": "tutorialmod:block/fireetherblock",
+    "particle": "minecraft:block/obsidian"
   }
 }

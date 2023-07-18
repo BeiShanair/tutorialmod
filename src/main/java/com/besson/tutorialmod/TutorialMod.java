@@ -5,6 +5,7 @@ import com.besson.tutorialmod.containers.ModContainers;
 import com.besson.tutorialmod.item.ModItems;
 import com.besson.tutorialmod.screens.RainingChangerScreen;
 import com.besson.tutorialmod.tileentity.ModTileEntities;
+import com.besson.tutorialmod.world.structure.ModStructures;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -43,6 +44,7 @@ public class TutorialMod {
         ModBlocks.register(eventBus);
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
+        ModStructures.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -65,6 +67,7 @@ public class TutorialMod {
             AxeItem.BLOCK_STRIPPING_MAP = new ImmutableMap.Builder<Block,Block>().putAll(AxeItem.BLOCK_STRIPPING_MAP)
                     .put(ModBlocks.ICE_LOG.get(),ModBlocks.STRIPPED_ICE_LOG.get())
                     .put(ModBlocks.ICE_WOOD.get(),ModBlocks.STRIPPED_ICE_WOOD.get()).build();
+            ModStructures.setupStructures();
         });
     }
 

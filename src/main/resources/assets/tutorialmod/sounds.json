@@ -5,5 +5,13 @@
     "sounds": [
       "tutorialmod:small_explosion"
     ]
+  },
+  "test": {
+    "sounds": [
+      {
+        "name": "tutorialmod:test",
+        "stream": true
+      }
+    ]
   }
 }

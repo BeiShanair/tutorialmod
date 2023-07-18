@@ -5,6 +5,7 @@ import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.custom.FireEther;
 import com.besson.tutorialmod.item.custom.IceEther;
+import com.besson.tutorialmod.util.ModSoundEvents;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -48,6 +49,8 @@ public class ModItems {
                     ModBlocks.ICE_SIGN.get(),ModBlocks.ICE_WALL_SIGN.get()));
     public static final RegistryObject<Item> OIL_BUCKET = ITEMS.register("oil_bucket",
             () -> new BucketItem(() -> ModFluid.OIL.get(),new Item.Properties().maxStackSize(1).group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> TEST_MUSIC_DISC = ITEMS.register("test_music_disc",
+            () -> new MusicDiscItem(1,() -> ModSoundEvents.TEST.get(),new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

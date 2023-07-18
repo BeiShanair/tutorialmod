@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModSoundEvents {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, TutorialMod.MOD_ID);
     public static final RegistryObject<SoundEvent> SMALL_EXPLOSION = registerSoundEvent("small_explosion");
+    public static final RegistryObject<SoundEvent> TEST = registerSoundEvent("test");
     public static RegistryObject<SoundEvent> registerSoundEvent(String name){
         return SOUNDS.register(name,() -> new SoundEvent(new ResourceLocation(TutorialMod.MOD_ID,name)));
     }

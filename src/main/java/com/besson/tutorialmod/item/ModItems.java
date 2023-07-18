@@ -2,6 +2,7 @@ package com.besson.tutorialmod.item;
 
 import com.besson.tutorialmod.TutorialMod;
 import com.besson.tutorialmod.block.ModBlocks;
+import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.custom.FireEther;
 import com.besson.tutorialmod.item.custom.IceEther;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -45,6 +46,8 @@ public class ModItems {
     public static final RegistryObject<Item> ICE_SIGN = ITEMS.register("ice_sign",
             () -> new SignItem(new Item.Properties().maxStackSize(16).group(ModItemGroup.TUTORIAL_TAB),
                     ModBlocks.ICE_SIGN.get(),ModBlocks.ICE_WALL_SIGN.get()));
+    public static final RegistryObject<Item> OIL_BUCKET = ITEMS.register("oil_bucket",
+            () -> new BucketItem(() -> ModFluid.OIL.get(),new Item.Properties().maxStackSize(1).group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

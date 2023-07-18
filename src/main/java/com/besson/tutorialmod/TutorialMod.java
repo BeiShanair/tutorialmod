@@ -3,6 +3,7 @@ package com.besson.tutorialmod;
 import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.block.ModWoodTypes;
 import com.besson.tutorialmod.containers.ModContainers;
+import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.ModItems;
 import com.besson.tutorialmod.screens.RainingChangerScreen;
 import com.besson.tutorialmod.tileentity.ModTileEntities;
@@ -49,6 +50,7 @@ public class TutorialMod {
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
         ModStructures.register(eventBus);
+        ModFluid.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -84,6 +86,9 @@ public class TutorialMod {
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_LEAVES.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_SAPLING.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.LEUCANTHEMUM_PALUDOSUM.get(),RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModFluid.OIL.get(),RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluid.OIL_FLOWING.get(),RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluid.OIL_BLOCK.get(),RenderType.getTranslucent());
 
             ScreenManager.registerFactory(ModContainers.RAINING_CHANGER_CONTAINER.get(), RainingChangerScreen::new);
             ClientRegistry.bindTileEntityRenderer(ModTileEntities.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);

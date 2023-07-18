@@ -74,4 +74,19 @@ public class FireEther extends Item {
     public static void lightEntityOnFire(Entity entity, int second) {
         entity.setFire(second);
     }
+
+    @Override
+    public boolean hasContainerItem(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        ItemStack container = itemStack.copy();
+        if (container.attemptDamageItem(1,random,null)){
+            return ItemStack.EMPTY;
+        }else {
+            return container;
+        }
+    }
 }

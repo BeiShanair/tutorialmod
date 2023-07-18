@@ -7,6 +7,7 @@ import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.ModItems;
 import com.besson.tutorialmod.screens.RainingChangerScreen;
 import com.besson.tutorialmod.tileentity.ModTileEntities;
+import com.besson.tutorialmod.util.ModSoundEvents;
 import com.besson.tutorialmod.world.structure.ModStructures;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
@@ -51,6 +52,7 @@ public class TutorialMod {
         ModContainers.register(eventBus);
         ModStructures.register(eventBus);
         ModFluid.register(eventBus);
+        ModSoundEvents.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

@@ -1,6 +1,7 @@
 package com.besson.tutorialmod;
 
 import com.besson.tutorialmod.block.ModBlocks;
+import com.besson.tutorialmod.block.ModWoodTypes;
 import com.besson.tutorialmod.containers.ModContainers;
 import com.besson.tutorialmod.item.ModItems;
 import com.besson.tutorialmod.screens.RainingChangerScreen;
@@ -10,14 +11,17 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.AxeItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -68,6 +72,7 @@ public class TutorialMod {
                     .put(ModBlocks.ICE_LOG.get(),ModBlocks.STRIPPED_ICE_LOG.get())
                     .put(ModBlocks.ICE_WOOD.get(),ModBlocks.STRIPPED_ICE_WOOD.get()).build();
             ModStructures.setupStructures();
+            Atlases.addWoodType(ModWoodTypes.ICE_WOOD);
         });
     }
 
@@ -81,6 +86,7 @@ public class TutorialMod {
             RenderTypeLookup.setRenderLayer(ModBlocks.LEUCANTHEMUM_PALUDOSUM.get(),RenderType.getCutout());
 
             ScreenManager.registerFactory(ModContainers.RAINING_CHANGER_CONTAINER.get(), RainingChangerScreen::new);
+            ClientRegistry.bindTileEntityRenderer(ModTileEntities.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
         });
     }
 

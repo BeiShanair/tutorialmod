@@ -1,10 +1,7 @@
 package com.besson.tutorialmod.block;
 
 import com.besson.tutorialmod.TutorialMod;
-import com.besson.tutorialmod.block.custom.BoxBlock;
-import com.besson.tutorialmod.block.custom.CornsBlock;
-import com.besson.tutorialmod.block.custom.FireEtherBlock;
-import com.besson.tutorialmod.block.custom.RainingChangerBlock;
+import com.besson.tutorialmod.block.custom.*;
 import com.besson.tutorialmod.block.custom.trees.IceetherTree;
 import com.besson.tutorialmod.item.ModItemGroup;
 import com.besson.tutorialmod.item.ModItems;
@@ -90,6 +87,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> RAINING_CHANGER = registerBlock("raining_changer",
             () -> new RainingChangerBlock(AbstractBlock.Properties.create(Material.ROCK).harvestLevel(2).harvestTool(ToolType.PICKAXE).setRequiresTool()
                     .hardnessAndResistance(5f)));
+    public static final RegistryObject<Block> ICE_SIGN = BLOCKS.register("ice_sign",
+            () -> new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD),ModWoodTypes.ICE_WOOD));
+    public static final RegistryObject<Block> ICE_WALL_SIGN = BLOCKS.register("ice_wall_sign",
+            () -> new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD),ModWoodTypes.ICE_WOOD));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

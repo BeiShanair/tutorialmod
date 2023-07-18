@@ -42,6 +42,9 @@ public class ModItems {
     public static final RegistryObject<Item> CORNS = ITEMS.register("corns",
             () -> new BlockItem(ModBlocks.CORNS.get(),new Item.Properties().food(new Food.Builder().hunger(3)
                     .saturation(0.1f).fastToEat().build()).group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ICE_SIGN = ITEMS.register("ice_sign",
+            () -> new SignItem(new Item.Properties().maxStackSize(16).group(ModItemGroup.TUTORIAL_TAB),
+                    ModBlocks.ICE_SIGN.get(),ModBlocks.ICE_WALL_SIGN.get()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

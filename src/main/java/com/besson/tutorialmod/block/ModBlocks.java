@@ -91,6 +91,8 @@ public class ModBlocks {
             () -> new ModStandingSignBlock(AbstractBlock.Properties.create(Material.WOOD),ModWoodTypes.ICE_WOOD));
     public static final RegistryObject<Block> ICE_WALL_SIGN = BLOCKS.register("ice_wall_sign",
             () -> new ModWallSignBlock(AbstractBlock.Properties.create(Material.WOOD),ModWoodTypes.ICE_WOOD));
+    public static final RegistryObject<Block> DESK = registerBlock("desk",
+            () -> new Desk(AbstractBlock.Properties.create(Material.IRON).notSolid()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> tRegistryObject = BLOCKS.register(name,block);

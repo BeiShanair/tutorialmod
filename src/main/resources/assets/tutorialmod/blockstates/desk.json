@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tutorialmod:block/desk",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tutorialmod:block/desk"
+    },
+    "facing=south": {
+      "model": "tutorialmod:block/desk",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tutorialmod:block/desk",
+      "y": 270
+    }
+  }
+}

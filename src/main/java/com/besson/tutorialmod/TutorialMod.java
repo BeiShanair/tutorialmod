@@ -88,6 +88,8 @@ public class TutorialMod {
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_LEAVES.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.ICE_ETHER_SAPLING.get(),RenderType.getCutout());
             RenderTypeLookup.setRenderLayer(ModBlocks.LEUCANTHEMUM_PALUDOSUM.get(),RenderType.getCutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.DESK.get(),RenderType.getCutout());
+
             RenderTypeLookup.setRenderLayer(ModFluid.OIL.get(),RenderType.getTranslucent());
             RenderTypeLookup.setRenderLayer(ModFluid.OIL_FLOWING.get(),RenderType.getTranslucent());
             RenderTypeLookup.setRenderLayer(ModFluid.OIL_BLOCK.get(),RenderType.getTranslucent());

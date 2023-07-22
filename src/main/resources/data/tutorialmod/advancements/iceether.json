@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "tutorialmod:iceether"
+    },
+    "title": "Magic World",
+    "description": "Get a hold of a Ice Ether! ",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "tutorialmod:tutorial_mod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tutorialmod:iceether"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

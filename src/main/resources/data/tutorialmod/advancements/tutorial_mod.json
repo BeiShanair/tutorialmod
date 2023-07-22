@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "tutorialmod:iceether"
+    },
+    "title": "Tutorial Mod",
+    "description": "Start to explore!",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "background": "tutorialmod:textures/block/iceetherblock.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "tutorialmod:iceether"
+          }
+        ]
+      }
+    }
+  }
+}

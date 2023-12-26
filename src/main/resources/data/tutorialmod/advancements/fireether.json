@@ -1,10 +1,10 @@
 {
   "display": {
     "icon": {
-      "item": "tutorialmod:iceether"
+      "item": "tutorialmod:fireether"
     },
     "title": "Magic World",
-    "description": "Get a hold of a Ice Ether! ",
+    "description": "Get a hold of a Fire Ether! ",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true
@@ -16,9 +16,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "tutorialmod:iceether"
-            ]
+            "item": "tutorialmod:fireether"
           }
         ]
       }

@@ -16,7 +16,7 @@
       "conditions": {
         "items": [
           {
-            "items": "tutorialmod:iceether"
+            "item": "tutorialmod:iceether"
           }
         ]
       }

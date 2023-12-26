@@ -2,9 +2,11 @@ package com.besson.tutorialmod.item;
 
 import com.besson.tutorialmod.TutorialMod;
 import com.besson.tutorialmod.block.ModBlocks;
+import com.besson.tutorialmod.entity.ModEntityTypes;
 import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.custom.FireEther;
 import com.besson.tutorialmod.item.custom.IceEther;
+import com.besson.tutorialmod.item.custom.ModSpawnEggItem;
 import com.besson.tutorialmod.util.ModSoundEvents;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -51,6 +53,9 @@ public class ModItems {
             () -> new BucketItem(() -> ModFluid.OIL.get(),new Item.Properties().maxStackSize(1).group(ModItemGroup.TUTORIAL_TAB)));
     public static final RegistryObject<Item> TEST_MUSIC_DISC = ITEMS.register("test_music_disc",
             () -> new MusicDiscItem(1,() -> ModSoundEvents.TEST.get(),new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
+    public static final RegistryObject<ModSpawnEggItem> TIGER_EGG = ITEMS.register("tiger_spawn_egg",
+            () -> new ModSpawnEggItem(ModEntityTypes.TIGER, 0x464F56, 0x1D6336,
+                    new Item.Properties().group(ModItemGroup.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

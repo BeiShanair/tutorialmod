@@ -3,11 +3,15 @@ package com.besson.tutorialmod;
 import com.besson.tutorialmod.block.ModBlocks;
 import com.besson.tutorialmod.block.ModWoodTypes;
 import com.besson.tutorialmod.containers.ModContainers;
+import com.besson.tutorialmod.entity.ModEntityTypes;
+import com.besson.tutorialmod.entity.render.TigerRenderer;
 import com.besson.tutorialmod.fluid.ModFluid;
 import com.besson.tutorialmod.item.ModItems;
 import com.besson.tutorialmod.screens.RainingChangerScreen;
 import com.besson.tutorialmod.tileentity.ModTileEntities;
 import com.besson.tutorialmod.util.ModSoundEvents;
+import com.besson.tutorialmod.world.biomes.ModBiomes;
+import com.besson.tutorialmod.world.gen.ModBiomesGeneration;
 import com.besson.tutorialmod.world.structure.ModStructures;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
@@ -24,6 +28,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -53,6 +58,8 @@ public class TutorialMod {
         ModStructures.register(eventBus);
         ModFluid.register(eventBus);
         ModSoundEvents.register(eventBus);
+        ModEntityTypes.register(eventBus);
+        ModBiomes.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -77,6 +84,7 @@ public class TutorialMod {
                     .put(ModBlocks.ICE_WOOD.get(),ModBlocks.STRIPPED_ICE_WOOD.get()).build();
             ModStructures.setupStructures();
             Atlases.addWoodType(ModWoodTypes.ICE_WOOD);
+            ModBiomesGeneration.generateBiomes();
         });
     }
 
@@ -97,6 +105,7 @@ public class TutorialMod {
             ScreenManager.registerFactory(ModContainers.RAINING_CHANGER_CONTAINER.get(), RainingChangerScreen::new);
             ClientRegistry.bindTileEntityRenderer(ModTileEntities.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
         });
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.TIGER.get(), TigerRenderer::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
